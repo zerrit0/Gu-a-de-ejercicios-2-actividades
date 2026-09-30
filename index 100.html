@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>actividades</title>
+<style>
+  :root {
+    --rojo: #e8141c;
+    --negro: #000000;
+    --blanco: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+  }
+  header {
+    background: var(--rojo);
+    padding: 3rem 1.5rem 2.5rem;
+    clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
+  }
+  header h1 {
+    margin: 0;
+    max-width: 14ch;
+    font-size: clamp(2.4rem, 9vw, 5rem);
+    line-height: 0.95;
+    font-weight: 900;
+    font-style: italic;
+    text-shadow: 4px 4px 0 var(--negro);
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 1rem 1.5rem 3rem; }
+  section { margin-top: 2.5rem; }
+  h2 {
+    display: inline-block;
+    margin: 0 0 0.75rem;
+    padding: 0.15rem 0.75rem;
+    background: var(--blanco);
+    color: var(--negro);
+    font-size: 1.4rem;
+    transform: skewX(-8deg);
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li {
+    padding: 0.7rem 0 0.7rem 1rem;
+    border-left: 5px solid var(--rojo);
+    border-bottom: 1px solid #333;
+  }
+  li strong { font-size: 1.1rem; }
+  li span { display: block; color: #cfcfcf; font-size: 0.95rem; }
+  li a { color: var(--blanco); text-decoration: underline; text-decoration-color: var(--rojo); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  li a:hover { color: var(--rojo); }
+  li a:active, li a:hover:active { color: var(--blanco); text-decoration-color: var(--blanco); text-shadow: 0 0 8px var(--blanco); }
+  :focus-visible { outline: 3px solid var(--rojo); outline-offset: 2px; }
+
+  /* Fondo dinámico */
+  #fondo { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  header, main { position: relative; z-index: 1; }
+
+  /* Skin de mouse (solo con mouse, no en pantallas táctiles) */
+  .con-cursor, .con-cursor a, .con-cursor body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M4 2 L4 26 L10 20 L15 30 L19 28 L14 18 L23 18 Z' fill='%23e8141c' stroke='%23ffffff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 4 2, auto;
+  }
+  .anillo {
+    position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none;
+    width: 34px; height: 34px; margin: -17px 0 0 -17px;
+    border: 2px solid var(--blanco); border-radius: 50%;
+    mix-blend-mode: difference; opacity: 0;
+    transition: width .2s, height .2s, margin .2s, background .2s, opacity .2s;
+  }
+  .anillo.visible { opacity: 1; }
+  .anillo.sobre-link { width: 56px; height: 56px; margin: -28px 0 0 -28px; background: rgba(232, 20, 28, .35); border-color: var(--rojo); mix-blend-mode: normal; }
+  .anillo.click { width: 20px; height: 20px; margin: -10px 0 0 -10px; }
+  .anillo.sobre-link.click { background: rgba(255, 255, 255, .25); border-color: var(--blanco); }
+</style>
+</head>
+<body>
+<canvas id="fondo" aria-hidden="true"></canvas>
+<div class="anillo" aria-hidden="true"></div>
+
+<header>
+  <h1>Guía de ejercicios 2 actividades</h1>
+</header>
+<main>
+  <section>
+    <h2>actividades</h2>
+    <ul>
+      <li><strong><a href="https://zerrit0.github.io/hace-calor/" target="_blank" rel="noopener">hace calor</a></strong><span>colocar temperatura</span></li>
+      <li><strong><a href="https://zerrit0.github.io/pedazos-de-torta/" target="_blank" rel="noopener">Torta para todos con if/else en DOM</a></strong><span>si hay suficiente tortas.</span></li>
+      <li><strong><a href="https://zerrit0.github.io/Probando-el-else-if/" target="_blank" rel="noopener">Probando el else if</a></strong><span>probando el el else if</span></li>
+      <li><strong><a href="https://zerrit0.github.io/determinar-tama-o-del-monitor-/" target="_blank" rel="noopener">Determinando el tamaño del monitor.</a></strong><span>Determinando el tamaño del escritorio.</span></li>
+      <li><strong><a href="https://github.com/zerrit0/M-ltiples-ifs-vs-else-if." target="_blank" rel="noopener">Múltiples ifs vs else if.</a></strong><span>Múltiples ifs vs else if.</span></li>
+      <li><strong><a href="https://zerrit0.github.io/-ndice-de-Masa-Corporal-IMC-/" target="_blank" rel="noopener">Índice de Masa Corporal (IMC)</a></strong><span>calcular masa corporal</span></li>
+      <li><strong><a href="https://zerrit0.github.io/Solicitud-de-email-y-password/" target="_blank" rel="noopener">gmail y pasword</a></strong><span>solisitud de gmail y password</span></li>
+      <li><strong><a href="https://zerrit0.github.io/Practica-el-uso-del-DOM/" target="_blank" rel="noopener">particar el uso del dom</a></strong><span>el dom es clave</span></li>
+      <li><strong><a href="https://github.com/zerrit0/Transformaci-n-de-condicionales" target="_blank" rel="noopener">trasfromacion de condicionales</a></strong><span>trasformacion</span></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+(function () {
+  var reducir = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Fondo: fragmentos de vidrio rojos y blancos ---- */
+  var c = document.getElementById('fondo'), ctx = c.getContext('2d');
+  var W, H, dpr, piezas = [], mouse = { x: -999, y: -999 };
+  var colores = ['#e8141c', '#e8141c', '#ffffff', '#3a3a3a'];
+
+  function nuevaPieza(y) {
+    var n = 3 + Math.floor(Math.random() * 2), r = 8 + Math.random() * 26, pts = [];
+    for (var i = 0; i < n; i++) {
+      var a = (i / n) * Math.PI * 2 + Math.random() * 0.8;
+      pts.push([Math.cos(a) * r * (0.5 + Math.random()), Math.sin(a) * r * (0.5 + Math.random())]);
+    }
+    return {
+      x: Math.random() * W, y: y,
+      vx: -0.15 - Math.random() * 0.35, vy: -0.25 - Math.random() * 0.6,
+      rot: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.02,
+      pts: pts, color: colores[Math.floor(Math.random() * colores.length)],
+      alpha: 0.15 + Math.random() * 0.4, ox: 0, oy: 0
+    };
+  }
+  function ajustar() {
+    dpr = window.devicePixelRatio || 1;
+    W = window.innerWidth; H = window.innerHeight;
+    c.width = W * dpr; c.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var total = Math.round(Math.min(70, W * H / 14000));
+    piezas = [];
+    for (var i = 0; i < total; i++) piezas.push(nuevaPieza(Math.random() * H));
+  }
+  function dibujar() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < piezas.length; i++) {
+      var p = piezas[i];
+      if (!reducir) {
+        p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+        var dx = p.x + p.ox - mouse.x, dy = p.y + p.oy - mouse.y, d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 140 && d > 0) { var f = (140 - d) / 140; p.ox += (dx / d) * f * 3; p.oy += (dy / d) * f * 3; }
+        p.ox *= 0.94; p.oy *= 0.94;
+        if (p.y < -60 || p.x < -60) { var q = nuevaPieza(H + 40); q.x = Math.random() * (W + 120); piezas[i] = p = q; }
+      }
+      ctx.save();
+      ctx.translate(p.x + p.ox, p.y + p.oy);
+      ctx.rotate(p.rot);
+      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.moveTo(p.pts[0][0], p.pts[0][1]);
+      for (var j = 1; j < p.pts.length; j++) ctx.lineTo(p.pts[j][0], p.pts[j][1]);
+      ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+    if (!reducir) requestAnimationFrame(dibujar);
+  }
+  window.addEventListener('resize', function () { ajustar(); if (reducir) dibujar(); });
+  ajustar(); dibujar();
+
+  /* ---- Skin de mouse ---- */
+  if (window.matchMedia('(pointer: fine)').matches) {
+    document.documentElement.classList.add('con-cursor');
+    var anillo = document.querySelector('.anillo'), ax = 0, ay = 0, mx = 0, my = 0;
+    document.addEventListener('mousemove', function (e) {
+      mouse.x = e.clientX; mouse.y = e.clientY; mx = e.clientX; my = e.clientY;
+      anillo.classList.add('visible');
+      anillo.classList.toggle('sobre-link', !!e.target.closest('a'));
+    });
+    document.addEventListener('mouseleave', function () { anillo.classList.remove('visible'); mouse.x = mouse.y = -999; });
+    document.addEventListener('mousedown', function () { anillo.classList.add('click'); });
+    document.addEventListener('mouseup', function () { anillo.classList.remove('click'); });
+    (function seguir() {
+      ax += (mx - ax) * 0.18; ay += (my - ay) * 0.18;
+      anillo.style.transform = 'translate(' + ax + 'px,' + ay + 'px)';
+      requestAnimationFrame(seguir);
+    })();
+  }
+
+  /* ---- Sonido al pasar el mouse por un link o al hacer clic ---- */
+  var sonido = new Audio('sonido_fTph4qIJ.mp3');
+  sonido.preload = 'auto';
+  function reproducir() {
+    try {
+      sonido.currentTime = 0;
+      var p = sonido.play();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+  document.addEventListener('mouseover', function (e) {
+    var a = e.target.closest('li a');
+    if (a && !a.contains(e.relatedTarget)) reproducir();
+  });
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('li a')) reproducir();
+  });
+})();
+</script>
+</body>
+</html>
